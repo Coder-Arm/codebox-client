@@ -1,0 +1,23 @@
+
+
+.side-profile{
+    position: fixed;
+    z-index: 100;
+    background-color: #112733;
+    padding-top: 15vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    color: white;
+    font-size: 2rem;
+    height: 100vh;
+  }
+  .side-profile .out-btns{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
