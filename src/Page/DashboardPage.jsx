@@ -40,7 +40,7 @@ const DashboardPage = () => {
         catch(error){
              console.log(error);
              toast.error('Network error');
-             navigate(-1)
+             navigate('/login')
              setLoading(false);
         }
       }
