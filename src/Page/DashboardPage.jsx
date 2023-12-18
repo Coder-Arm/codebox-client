@@ -4,6 +4,7 @@ import hostName from '../utils/domain';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import Loader from '../Components/Loader';
+import toast from 'react-hot-toast'
 import RecentArenas from '../Components/RecentArenas';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,12 +32,15 @@ const DashboardPage = () => {
       const userToken = Cookies.get('userToken')
       async function fetchData(){
         try{
-           const response = await axios.post(hostName+'/dashboard',{userToken}, {withCredentials: true});
+           const response = await axios.post(hostName+'/dashboard',{userToken}, { withCredentials: true 
+           });
              setData(response.data.data[0]);
               setLoading(false);
         }
         catch(error){
              console.log(error);
+             toast.error('Network error');
+             navigate(-1)
              setLoading(false);
         }
       }

@@ -20,7 +20,7 @@ const LoginPage = () => {
       const userToken = Cookies.get('userToken');
         // console.log(userToken);
     if(userToken){
-      
+         setLoading(true)
       try{
          const response = await axios.post(hostName+'/auth',{userToken});
          if(response.data.status === 200){
