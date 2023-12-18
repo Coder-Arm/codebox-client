@@ -1,2 +1,2 @@
-const hostName = 'https://codebox-server-git-main-coder-arm.vercel.app';
+const hostName = 'https://codebox-server-uij5.onrender.com';
 export default hostName;
