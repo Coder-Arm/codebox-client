@@ -1,2 +1,2 @@
-const hostName = 'https://codebox-server-uij5.onrender.com';
+const hostName = 'https://codebox-server-84is.onrender.com';
 export default hostName;
