@@ -1,0 +1,12 @@
+.modal-btn{
+    color: aquamarine !important;
+    margin-top: 20px !important;
+    background-color: rgba(127, 255, 212, 0.237) !important;
+}
+.modal-btn:hover{
+    background-color:  transparent !important;
+}
+form{
+    display : flex;
+    gap : 20px;
+}

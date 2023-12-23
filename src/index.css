@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 2px solid red; */
+}
+body {
+  margin: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar{
+  appearance: none;
+}
+
+.bg-box{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #27283D;
+}
+.img-1{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  object-fit: cover;
+}
+
+.auth-btns{
+  display: flex;
+   padding: 60px;
+   gap: 20px;
+   width: 40%;
+   position: absolute;
+   top: 60vh;
+}
+.auth-btns button{
+  font-size: 1.2rem;
+  flex-grow: 1;
+}
+
+/* Signup Page */
+.form-container{
+  height: 100vh;
+  padding-top: 15vh !important;
+  background-color: #272838;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start !important;
+  gap : 5vh;
+}
+.form-container p:hover{
+  cursor: pointer;
+  color :#b37ffa
+}
+
+
+/* Dashboard Page */
+.dash-page{
+  display: flex;
+  min-height: 100vh;
+}
+.arena-container{
+  background-color: #001E2B;
+  flex-grow: 1;
+  font-size: 1.8rem;
+  color: white;
+  padding: 20px 40px;
+}
+
+/* Editor page */
+.header{
+  height: 8vh;
+  background-color: #272838;
+}
+.main{
+  display: flex;
+}
+.container{
+  display : flex;
+  flex-direction: column;
+  width: 50%;
+  background-color : #272838;
+  color : white;
+  height: 92vh;
+}
+.box{
+  display : flex;
+  flex-direction : column;
+  flex-grow: 1;
+}
+.editor-header{
+  display : flex;
+  justify-content : space-between;
+}
+.editor-header-left{
+  display : flex;
+    align-items : center;
+    gap : 10px;
+    background-color : #01161E;
+    padding : 6px 10px;
+    border-top-right-radius : 5px;
+}
+
+.cm-editor{
+ height: 22vh;
+ border-radius: 5px;
+ border-top-left-radius: 0;
+ width: 95%;
+}
+iframe{
+  height: auto;
+  overflow: auto;
+  width: 50%;
+  border : none
+}
