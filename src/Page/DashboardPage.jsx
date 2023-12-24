@@ -29,6 +29,7 @@ const DashboardPage = () => {
     useEffect(() => {
       setLoading(true);
       const userToken = Cookies.get('userToken')
+      console.log('userToken',userToken);
       async function fetchData(){
         try{
            const response = await axios.post(hostName+'/dashboard',{userToken})
