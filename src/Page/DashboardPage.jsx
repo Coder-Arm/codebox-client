@@ -31,7 +31,7 @@ const DashboardPage = () => {
       async function fetchData(){
         try{
           const userToken = Cookies.get('userToken');
-          console.log(userToken);
+          console.log('userToken',userToken);
            const response = await axios.post(hostName+'/dashboard',{userToken})
              setData(response.data.data);
               setLoading(false);
