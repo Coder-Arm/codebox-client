@@ -32,11 +32,7 @@ const DashboardPage = () => {
         try{
           const userToken = document.cookie.split('=')[1];
           console.log('userToken',userToken);
-           const response = await axios.post(hostName+'/dashboard',{userToken},{
-            Headers : {
-            'Content-type' : 'application/json',
-             'Access-Control-Allow-Origin' : '*'
-           }})
+           const response = await axios.post(hostName+'/dashboard',{userToken})
              setData(response.data.data);
               setLoading(false);
           }
