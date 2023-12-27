@@ -49,6 +49,7 @@ const LoginPage = () => {
          return; 
       }
        else {
+        Cookies.set('userToken', response.data.token)
          toast.success(response.data.message)
          navigate('/dashboard')
        };
