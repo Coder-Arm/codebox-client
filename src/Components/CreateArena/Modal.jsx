@@ -37,11 +37,12 @@ const ModalComponent = ({name,open,handleOpen,handleClose}) => {
             navigate('/dashboard/editor',{state : {data : response.data.data}})
            }
            else{
-            toast.error(response.data.message)
+            toast.error(response.data.error)
            }
        }
        catch(error){
-           toast.error(error)
+        console.log(error);
+        toast.error('Internal server error')
        }
      }
 

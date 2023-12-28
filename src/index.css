@@ -14,7 +14,7 @@ body {
 ::-webkit-scrollbar{
   appearance: none;
 }
-
+/* Home page */
 .bg-box{
   position: relative;
   width: 100%;
@@ -35,13 +35,45 @@ body {
    gap: 20px;
    width: 40%;
    position: absolute;
-   top: 60vh;
+   top: 30vw;
 }
 .auth-btns button{
   font-size: 1.2rem;
   flex-grow: 1;
 }
 
+@media (max-width : 768px) {
+  .bg-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .auth-btns{
+    order: 0;
+    top: 15vw;
+    width: 100%;
+  }
+  .text-animate{
+    width : 100% !important;
+    text-align: center !important;
+    order: 1;
+  }
+  .img-1{
+    order: 2;
+    top: 30vw;
+    width: 100%;
+  }
+}
+@media (max-width : 520px) {
+  .img-1{
+    top: 35vw;
+  }
+}
+@media (max-width : 440px) {
+  .img-1{
+    top: 45vw;
+  }
+}
 /* Signup Page */
 .form-container{
   height: 100vh;
@@ -58,7 +90,6 @@ body {
   cursor: pointer;
   color :#b37ffa
 }
-
 
 /* Dashboard Page */
 .dash-page{
@@ -118,4 +149,12 @@ iframe{
   overflow: auto;
   width: 50%;
   border : none
+}
+@media (max-width : 768px) {
+  .main{
+    flex-direction: column;
+  }
+  .container,iframe{
+    width: 100%;
+  }
 }

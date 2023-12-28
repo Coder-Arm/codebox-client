@@ -2,36 +2,29 @@ import React, { useEffect, useState } from 'react'
 import img1 from '../assets/img-1.jpg'
 import { TypeAnimation } from 'react-type-animation';
 import ButtonComponent from '../Components/Button';
-import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../Components/Loader';
-import hostName from '../utils/domain';
-import axios from 'axios';
+import isAuth from '../utils/isAuth';
+
 const HomePage = () => {
   const [loading,setLoading] = useState(false);
    const navigate = useNavigate();
 
-//    useEffect(() => {
-    
-//     (async function(){
-//       const userToken = Cookies.get('userToken');
-//         // console.log(userToken);
-//     if(userToken){
-      
-//       try{
-//          const response = await axios.post(hostName+'/auth',{userToken});
-//          if(response.data.status === 200){
-//           setLoading(false);
-//           navigate('/dashboard')
-//          }
-//       }
-//       catch(error){
-//          setLoading(false);
-//          navigate('/')
-//       }
-//     }
-//   })()
-// },[navigate])
+   useEffect(() => {
+    (async function(){
+    setLoading(true);
+    const auth = await isAuth();
+    if(auth){
+      setLoading(false);
+      navigate('/dashboard')
+    }
+    else{
+      setLoading(false);
+      navigate('/')
+    }
+  })()
+},[])
+
   return (<>
       <Loader loading={loading}/>
         <div className='bg-box'>

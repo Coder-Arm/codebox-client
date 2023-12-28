@@ -5,9 +5,10 @@ import ButtonComponent from '../Components/Button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import hostName from '../utils/domain';
-import Cookies from 'js-cookie';
 import Loader from '../Components/Loader';
 import toast from 'react-hot-toast';
+import isAuth from '../utils/isAuth';
+
 const SignupPage = () => {
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
@@ -16,27 +17,20 @@ const SignupPage = () => {
      const [loading,setLoading] = useState(false);
      const navigate = useNavigate()
  
-  useEffect(() => {
-    (async function(){
-      const userToken = Cookies.get('userToken');
- //  console.log(userToken);
-    if(userToken){
+     useEffect(() => {
+      (async function(){
       setLoading(true);
-      try{
-         const response = await axios.post(hostName+'/auth',{userToken});
-         if(response.data.status === 200){
-          setLoading(false);
-          navigate('/login')
-         }
-         else setLoading(false);
+      const auth = await isAuth();
+      if(auth){
+        setLoading(false);
+        navigate('/dashboard')
       }
-      catch(error){
-         setLoading(false);
-         navigate('/')
+      else{
+        setLoading(false);
+        navigate('/signup')
       }
-    }
-  })()
-},[])
+    })()
+  },[])
 
  async function handleSubmit(e){
     e.preventDefault();

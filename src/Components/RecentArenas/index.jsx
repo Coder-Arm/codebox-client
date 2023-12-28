@@ -19,7 +19,7 @@ const RecentArenas = () => {
   const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
   const page = parseInt(skipState/3)
-  console.log(page*3,page*3+3)
+  // console.log(page*3,page*3+3)
 // console.log(data);
 const dispatch = useDispatch();
   useEffect(() => {
@@ -46,7 +46,7 @@ const dispatch = useDispatch();
     }
   }
    fetchData();
-},[navigate])
+},[])
  async function goToArena(id){
      try{
         const response = await axios.post(hostName+'/get-arena',{id});
@@ -79,7 +79,6 @@ const dispatch = useDispatch();
     toast.error(error)
    }
   }
-
 
   return (<>
   <Loader loading={loading}/>

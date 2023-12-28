@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {Pagination} from '@mui/material';
 import './style.css'
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,11 +6,11 @@ import { manageSkips } from '../../redux/skipSlice';
 
   const PaginationComponent = () => {
     const arenas = useSelector(state => state.arenas);
-    const [selectedPage,setSelectedPage] = useState(1);
+    const skipState = useSelector(state => state.skip)
+    const [selectedPage,setSelectedPage] = useState(!skipState ? 1 : skipState/3+1);
       const dispatch = useDispatch();
-    
+    // console.log(skipState/3+1);
       function handleChange(event,page){
-      // console.log(page);
       setSelectedPage(page);
       dispatch(manageSkips((page-1)*3))
       }

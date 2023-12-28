@@ -21,3 +21,9 @@
   input:focus{
     outline : none
   }
+
+  @media (max-width: 520px) {
+  form {
+     width: 80% !important;
+  }
+  }

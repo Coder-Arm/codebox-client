@@ -8,6 +8,7 @@ import RecentArenas from '../Components/RecentArenas';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import SideProfile from '../Components/SideProfile';
+import { useNavigate } from 'react-router-dom';
 
 const menuStyle = {
   position : 'fixed', 
@@ -25,13 +26,14 @@ const DashboardPage = () => {
   const [data,setData] = useState(null);
     const [loading,setLoading] = useState(false);
     const [isOpen,setIsOpen] = useState(false);
-    
+    const navigate = useNavigate();
     useEffect(() => {
       setLoading(true);
       async function fetchData(){
+        const userToken = Cookies.get('userToken');
+        // console.log('usertoken',userToken);
+        if(userToken){
         try{
-          const userToken = Cookies.get('userToken');
-          console.log('userToken',userToken);
            const response = await axios.post(hostName+'/dashboard',{userToken})
              setData(response.data.data);
               setLoading(false);
@@ -39,7 +41,14 @@ const DashboardPage = () => {
         catch(error){
              console.log(error);
              setLoading(false);
+             navigate('/login')
         }
+      }
+      else{
+        setLoading(false);
+        navigate('/login')
+      }
+      
       }
       fetchData();
     },[])
