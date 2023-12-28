@@ -13,8 +13,8 @@ const SignupPage = () => {
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  const [loading,setLoading] = useState(false);
 
-     const [loading,setLoading] = useState(false);
      const navigate = useNavigate()
  
      useEffect(() => {
@@ -33,20 +33,24 @@ const SignupPage = () => {
   },[])
 
  async function handleSubmit(e){
+  setLoading(true);
     e.preventDefault();
     try{
       const response = await axios.post(hostName+'/signup',{name,email,password});
       const status  = response.data.status;
       if(status !== 201){
+        setLoading(false);
       toast.error(response.data.error || response.data.message);
         return; 
     }
       else {
+        setLoading(false);
         toast.success(response.data.message)
         navigate('/login')
       };
     }
     catch(err){
+      setLoading(false)
     console.log(err);
     }
   }
