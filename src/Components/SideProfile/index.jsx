@@ -14,7 +14,6 @@ const SideProfile = ({data,isOpen}) => {
     <div>{data.name}</div>
      <div className='out-btns'>
      <ButtonComponent name={'Logout'}/>
-     <ButtonComponent name={'Logout from all devices'}/>
      <ButtonComponent name={'Delete Account'} id={data._id} bgColor={'crimson'}/>
      </div>
      </div>
