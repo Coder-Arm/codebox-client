@@ -7,7 +7,7 @@ const SideProfile = ({data,isOpen}) => {
   return (
     <div className='side-profile' style={!isOpen ? {display : 'none'} : {display : 'flex'}}>
     <Avatar sx={{ bgcolor: 'tomato',
-      width : '12vw', height : '12vw',
+      width : '15vw', height : '15vw',
       fontSize : 50
    }}
      >{data.name[0].toUpperCase()}</Avatar>
