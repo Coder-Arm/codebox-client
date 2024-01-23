@@ -25,22 +25,27 @@ const style = {
 
 const ModalComponent = ({name,open,handleOpen,handleClose}) => {
      const [arenaName,setArenaName] = useState('');
+     const [loading,setLoading] = useState(false)
      const navigate = useNavigate();
 
     async function handleCreation(e){
       e.preventDefault();
        const userToken =  Cookies.get('userToken');
        try{
+        setLoading(true)
            const response = await axios.post(hostName+'/dashboard/create-arena',{arenaName,userToken});
            if(response.data.status === 201){
+            setLoading(false)
             toast.success(response.data.message);
             navigate('/dashboard/editor',{state : {data : response.data.data}})
            }
            else{
+            setLoading(false)
             toast.error(response.data.message)
            }
        }
        catch(error){
+        setLoading(false)
            toast.error(error)
        }
      }
