@@ -49,16 +49,20 @@ const dispatch = useDispatch();
 },[])
  async function goToArena(id){
      try{
+      setLoading(true);
         const response = await axios.post(hostName+'/get-arena',{id});
         if(response.data.status === 200){
+          setLoading(false);
           toast.success(response.data.message);
             navigate('/dashboard/editor',{state : {data : response.data.data}})
         }
         else{
+          setLoading(false);
            toast.error(response.data.message);
         }
      }
      catch(error){
+      setLoading(false);
       toast.error(error)
      }
  }

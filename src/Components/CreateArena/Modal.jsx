@@ -9,6 +9,7 @@ import axios from 'axios';
 import hostName from '../../utils/domain';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../Loader';
 
 const style = {
   position: 'absolute',
@@ -25,22 +26,27 @@ const style = {
 
 const ModalComponent = ({name,open,handleOpen,handleClose}) => {
      const [arenaName,setArenaName] = useState('');
+     const [loading,setLoading] = useState(false);
      const navigate = useNavigate();
 
     async function handleCreation(e){
       e.preventDefault();
        const userToken =  Cookies.get('userToken');
        try{
+        setLoading(true);
            const response = await axios.post(hostName+'/dashboard/create-arena',{arenaName,userToken});
            if(response.data.status === 201){
+            setLoading(false);
             toast.success(response.data.message);
             navigate('/dashboard/editor',{state : {data : response.data.data}})
            }
            else{
+            setLoading(false);
             toast.error(response.data.error)
            }
        }
        catch(error){
+        setLoading(false);
         console.log(error);
         toast.error('Internal server error')
        }
@@ -62,6 +68,7 @@ const ModalComponent = ({name,open,handleOpen,handleClose}) => {
           </form>
         </Box>
       </Modal>
+       <Loader loading={loading}/>
     </>
   )
 }
