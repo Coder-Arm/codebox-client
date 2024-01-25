@@ -15,6 +15,7 @@ import { getArenas } from '../../redux/arenasSlice';
 const RecentArenas = () => {
   const skipState = useSelector(state => state.skip);
   const arenas = useSelector(state => state.arenas)
+  console.log('arenas',arenas)
   // console.log(skipState);
   const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ const dispatch = useDispatch();
     }
   }
    fetchData();
-},[navigate])
+},[])
  async function goToArena(id){
      try{
       setLoading(true)
@@ -88,7 +89,8 @@ const dispatch = useDispatch();
   return (<>
   <Loader loading={loading}/>
     <div style={{margin : '50px 0 40px 0'}}>Recent Arenas</div>
-    { arenas ? 
+    { 
+    arenas ? 
     <div className='recent-arenas-container'>
      {arenas.slice(page*3,page*3+3).map(item => {
         return <div key={item._id} className='arena-box' id={item._id} onClick={() => goToArena(item._id)}>
@@ -100,7 +102,8 @@ const dispatch = useDispatch();
         </div>
      })}
     </div> 
-    : <p>No arenas developed</p>}
+    : <p>No arenas found</p>
+    }
     <PaginationComponent/>
     </>  
   )
