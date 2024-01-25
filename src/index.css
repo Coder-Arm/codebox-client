@@ -14,7 +14,11 @@ body {
 ::-webkit-scrollbar{
   appearance: none;
 }
+<<<<<<< HEAD
 
+=======
+/* Home page */
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 .bg-box{
   position: relative;
   width: 100%;
@@ -35,13 +39,52 @@ body {
    gap: 20px;
    width: 40%;
    position: absolute;
+<<<<<<< HEAD
    top: 60vh;
+=======
+   top: 30vw;
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 }
 .auth-btns button{
   font-size: 1.2rem;
   flex-grow: 1;
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width : 768px) {
+  .bg-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .auth-btns{
+    order: 0;
+    top: 15vw;
+    width: 100%;
+  }
+  .text-animate{
+    width : 100% !important;
+    text-align: center !important;
+    order: 1;
+  }
+  .img-1{
+    order: 2;
+    top: 30vw;
+    width: 100%;
+  }
+}
+@media (max-width : 520px) {
+  .img-1{
+    top: 35vw;
+  }
+}
+@media (max-width : 440px) {
+  .img-1{
+    top: 45vw;
+  }
+}
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 /* Signup Page */
 .form-container{
   height: 100vh;
@@ -59,7 +102,10 @@ body {
   color :#b37ffa
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 /* Dashboard Page */
 .dash-page{
   display: flex;
@@ -119,3 +165,14 @@ iframe{
   width: 50%;
   border : none
 }
+<<<<<<< HEAD
+=======
+@media (max-width : 768px) {
+  .main{
+    flex-direction: column;
+  }
+  .container,iframe{
+    width: 100%;
+  }
+}
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1

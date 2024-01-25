@@ -16,7 +16,11 @@ const EditorPage = () => {
     console.log(location.state.data);
     if(!location.state) navigate('/dashboard');
     else setData(location.state.data);
+<<<<<<< HEAD
   },[navigate])
+=======
+  },[])
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
   
   return (
     <>

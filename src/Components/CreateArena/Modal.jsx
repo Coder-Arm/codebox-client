@@ -9,6 +9,10 @@ import axios from 'axios';
 import hostName from '../../utils/domain';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import Loader from '../Loader';
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 
 const style = {
   position: 'absolute',
@@ -25,21 +29,33 @@ const style = {
 
 const ModalComponent = ({name,open,handleOpen,handleClose}) => {
      const [arenaName,setArenaName] = useState('');
+<<<<<<< HEAD
      const [loading,setLoading] = useState(false)
+=======
+     const [loading,setLoading] = useState(false);
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
      const navigate = useNavigate();
 
     async function handleCreation(e){
       e.preventDefault();
        const userToken =  Cookies.get('userToken');
        try{
+<<<<<<< HEAD
         setLoading(true)
            const response = await axios.post(hostName+'/dashboard/create-arena',{arenaName,userToken});
            if(response.data.status === 201){
             setLoading(false)
+=======
+        setLoading(true);
+           const response = await axios.post(hostName+'/dashboard/create-arena',{arenaName,userToken});
+           if(response.data.status === 201){
+            setLoading(false);
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
             toast.success(response.data.message);
             navigate('/dashboard/editor',{state : {data : response.data.data}})
            }
            else{
+<<<<<<< HEAD
             setLoading(false)
             toast.error(response.data.message)
            }
@@ -47,6 +63,16 @@ const ModalComponent = ({name,open,handleOpen,handleClose}) => {
        catch(error){
         setLoading(false)
            toast.error(error)
+=======
+            setLoading(false);
+            toast.error(response.data.error)
+           }
+       }
+       catch(error){
+        setLoading(false);
+        console.log(error);
+        toast.error('Internal server error')
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
        }
      }
 
@@ -66,6 +92,10 @@ const ModalComponent = ({name,open,handleOpen,handleClose}) => {
           </form>
         </Box>
       </Modal>
+<<<<<<< HEAD
+=======
+       <Loader loading={loading}/>
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
     </>
   )
 }

@@ -5,4 +5,12 @@
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
+<<<<<<< HEAD
+=======
+   transition: opacity 300ms ease-in-out;
+}
+
+.btn:hover {
+ opacity: 0.75
+>>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 }
