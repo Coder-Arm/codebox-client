@@ -1,8 +1,7 @@
 import React from 'react'
 
 const Output = ({html,css,js,preview}) => {
-  // console.log(html)
-  //  const previewStyle = preview ? `<style>body{zoom : 1}</style>` : '';
+
   const srcCode = `
     <html>
     <head>

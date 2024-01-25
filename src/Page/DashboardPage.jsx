@@ -4,10 +4,7 @@ import hostName from '../utils/domain';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import Loader from '../Components/Loader';
-<<<<<<< HEAD
 import toast from 'react-hot-toast'
-=======
->>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
 import RecentArenas from '../Components/RecentArenas';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,7 +28,6 @@ const DashboardPage = () => {
     const [loading,setLoading] = useState(false);
     const [isOpen,setIsOpen] = useState(false);
     const navigate = useNavigate();
-<<<<<<< HEAD
     
     useEffect(() => {
       setLoading(true);
@@ -50,7 +46,7 @@ const DashboardPage = () => {
              setLoading(false);
         }
       }
-=======
+    },[])
     useEffect(() => {
       setLoading(true);
       async function fetchData(){
@@ -74,7 +70,6 @@ const DashboardPage = () => {
       }
       
       }
->>>>>>> 57cd06f5c854e387ed561f1fb2b5e0231d5018b1
       fetchData();
     },[])
 
