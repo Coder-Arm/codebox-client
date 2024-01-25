@@ -56,6 +56,7 @@ useEffect(() => {
   async function handleSubmit(e){
      e.preventDefault()
      try{
+      setLoading(true);
        const response = await axios.post(hostName+'/login',{email,password});
        const status  = response.data.status;
        if(status !== 201){
