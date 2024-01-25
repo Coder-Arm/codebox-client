@@ -100,7 +100,7 @@ const dispatch = useDispatch();
         </div>
      })}
     </div> 
-    : <p>No arenas developed</p>}
+    : <p style={{fontSize : '1rem'}}>No arenas developed</p>}
     <PaginationComponent/>
     </>  
   )
