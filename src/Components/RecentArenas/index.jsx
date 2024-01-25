@@ -88,7 +88,7 @@ const dispatch = useDispatch();
   return (<>
   <Loader loading={loading}/>
     <div style={{margin : '50px 0 40px 0'}}>Recent Arenas</div>
-    { arenas ? 
+    { arenas.length > 0 ? 
     <div className='recent-arenas-container'>
      {arenas.slice(page*3,page*3+3).map(item => {
         return <div key={item._id} className='arena-box' id={item._id} onClick={() => goToArena(item._id)}>

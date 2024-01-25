@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = null;
+const initialState = [];
 const arenasSlice = createSlice({
     name : 'arenas',
     initialState,
