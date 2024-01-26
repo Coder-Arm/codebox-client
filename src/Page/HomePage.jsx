@@ -13,26 +13,6 @@ const HomePage = () => {
   const [loading,setLoading] = useState(false);
    const navigate = useNavigate();
 
-   useEffect(() => {
-    (async function(){
-      const userToken = Cookies.get('userToken');
-        // console.log(userToken);
-    if(userToken){
-      try{
-         const response = await axios.post(hostName+'/auth',{userToken});
-         if(response.data.status === 200){
-          setLoading(false);
-          navigate('/dashboard')
-         }
-      }
-      catch(error){
-         setLoading(false);
-         navigate('/')
-      }
-    }
-  })()
-  },[])
-
   useEffect(() => {
     (async function(){
     setLoading(true);
