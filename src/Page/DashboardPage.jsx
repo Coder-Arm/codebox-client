@@ -4,7 +4,6 @@ import hostName from '../utils/domain';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import Loader from '../Components/Loader';
-import toast from 'react-hot-toast'
 import RecentArenas from '../Components/RecentArenas';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
