@@ -1,7 +1,7 @@
 import { Box, LinearProgress } from '@mui/material'
 import React from 'react'
 const style = {
-  width: '100%',
+  width: '100vw',
   position : 'fixed',
   top : 0,
   zIndex : 5,
